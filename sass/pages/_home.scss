@@ -14,5 +14,237 @@
 .hotel-view {
   background-color: $color-white;
   flex: 1;
-  height: 80rem;
+
+  .gallery {
+    display: flex;
+
+    &__photo {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .overview {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-grey-light-2;
+
+    &__heading {
+      text-transform: uppercase;
+      font-size: 2.25rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: $color-grey-dark-2;
+      padding: 1.5rem 3rem;
+    }
+
+    &__stars {
+      margin-right: auto;
+      display: flex;
+    }
+
+    &__icon,
+    &__icon-location {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: $color-primary;
+    }
+
+    &__icon-location {
+      margin-right: 0.5rem;
+    }
+
+    &__location {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__rating {
+      background-color: $color-primary;
+      color: $color-white;
+      margin-left: 3rem;
+      padding: 0 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+
+      &--average {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: -3px;
+      }
+
+      &--count {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  font-size: 1.4rem;
+  background-color: $color-grey-light-1;
+  border-bottom: 1px solid $color-grey-light-2;
+}
+
+.description {
+  background-color: $color-white;
+  box-shadow: $shadow-light;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem;
+
+  .list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 2.5rem;
+    border-top: 1px solid $color-grey-light-2;
+    border-bottom: 1px solid $color-grey-light-2;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      flex: 0 0 50%;
+      margin-bottom: 0.7rem;
+      cursor: pointer;
+    }
+
+    &__item::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.7rem;
+      margin-left: 3px;
+
+      background-color: $color-primary;
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -moz-mask-image: url(../img/chevron-thin-right.svg);
+      -ms-mask-image: url(../img/chevron-thin-right.svg);
+      -o-mask-image: url(../img/chevron-thin-right.svg);
+      mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      -moz-mask-size: cover;
+      -ms-mask-size: cover;
+      -o-mask-size: cover;
+      mask-size: cover;
+    }
+
+    &__item:hover::before {
+      margin-left: 8px;
+      transition: all 0.2s;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+    }
+  }
+
+  .recommend {
+    font-size: 1.3rem;
+    color: $color-grey-dark-3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__photo {
+      box-sizing: content-box;
+      width: 4rem;
+      height: 4rem;
+      border: 3px solid $color-white;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+
+      &:not(:last-child) {
+        margin-right: -2rem;
+      }
+    }
+  }
+}
+
+.user-reviews {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .review {
+    background-color: $color-white;
+    box-shadow: $shadow-light;
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+      margin-bottom: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    &__user {
+      display: flex;
+      align-items: center;
+    }
+
+    &__photo {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+
+    &__user-box {
+      margin-right: auto;
+      margin-left: 2rem;
+    }
+
+    &__user-name {
+      text-transform: uppercase;
+      color: $color-grey-dark-2;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    &__user-date {
+      color: $color-grey-dark-3;
+      font-size: 1rem;
+    }
+
+    &__rating {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: $color-primary;
+    }
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -2.4rem;
+      left: -1rem;
+      color: $color-grey-light-2;
+      font-size: 20rem;
+      line-height: 1;
+      font-family: sans-serif;
+      z-index: 1;
+    }
+  }
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
 }
